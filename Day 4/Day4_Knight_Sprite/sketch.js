@@ -1,4 +1,5 @@
 let spritesheet;
+let backgroundImg;
 let spriteWidth = 65;   
 let spriteHeight = 65;
 let animations = {
@@ -24,6 +25,7 @@ let defending = false;      // Flag for the continuous defense animation (Shift 
 
 function preload() {
   spritesheet = loadImage('spritesheet.png');
+  backgroundImg = loadImage('2.jpg');
 }
 
 function setup() {
@@ -33,7 +35,10 @@ function setup() {
 }
 
 function draw() {
-  background(220);
+  push();
+  imageMode(CORNER);
+  image(backgroundImg, 0, 0, width, height); 
+  pop();
 
   
   
